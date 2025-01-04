@@ -23,6 +23,9 @@ resource "aws_iam_role" "eks_cluster_autoscaler" {
 
 resource "aws_iam_policy" "eks_cluster_autoscaler" {
   name = "eks-cluster-autoscaler"
+  tags={
+           Name="iam-policy"
+           Project="test-project"
 
   policy = jsonencode({
     Statement = [{
